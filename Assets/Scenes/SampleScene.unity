@@ -640,6 +640,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 10
+  ySpeed: 10
+  xRange: 4.5
+  yRange: 2
 --- !u!1 &1941369099
 GameObject:
   m_ObjectHideFlags: 0
