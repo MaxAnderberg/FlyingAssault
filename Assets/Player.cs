@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [Tooltip("In ms")] [SerializeField] float xRange = 5f;
     [Tooltip("In ms")] [SerializeField] float yRange = 5f;
 
+    [SerializeField] float positionPitchFactor = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,11 @@ public class Player : MonoBehaviour
 
     private void ProcessRotation()
     {
-        transform.localRotation = Quaternion.Euler(-30f, 30f, 0f);
+        float pitch = 0f;
+        float yaw = 0f;
+        float roll = 0f;
+
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
     private void ProcessTranslation()
