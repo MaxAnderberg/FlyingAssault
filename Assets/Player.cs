@@ -13,7 +13,13 @@ public class Player : MonoBehaviour
     [Tooltip("In ms")] [SerializeField] float xRange = 5f;
     [Tooltip("In ms")] [SerializeField] float yRange = 5f;
 
-    [SerializeField] float positionPitchFactor = 5f;
+    [SerializeField] float positionPitchFactor = -5f;
+    [SerializeField] float positionYawFactor = -5f;
+    [SerializeField] float controlPitchFactor = 5f;
+    [SerializeField] float controlRollFactor = -20f;
+
+
+    float xThrow, yThrow;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +37,11 @@ public class Player : MonoBehaviour
 
     private void ProcessRotation()
     {
-        float pitch = 0f;
-        float yaw = 0f;
-        float roll = 0f;
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToControlThrow = yThrow * controlPitchFactor;
+        float pitch = pitchDueToPosition + pitchDueToControlThrow;
+        float yaw = transform.localPosition.x * positionYawFactor;
+        float roll = xThrow * controlRollFactor;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
@@ -41,13 +49,13 @@ public class Player : MonoBehaviour
     private void ProcessTranslation()
     {
         // vertical
-        float yTthrow = CrossPlatformInputManager.GetAxis("Vertical");
-        float yOffset = yTthrow * xSpeed * Time.deltaTime;
+        yThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        float yOffset = yThrow * xSpeed * Time.deltaTime;
         float rawNewYPos = transform.localPosition.y + yOffset;
         float yPos = Mathf.Clamp(rawNewYPos, -yRange, yRange);
 
         // horizontal 
-        float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
+        xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
         float xOffset = xThrow * xSpeed * Time.deltaTime;
         float rawNewXPos = transform.localPosition.x + xOffset;
         float xPos = Mathf.Clamp(rawNewXPos, -xRange, xRange);
