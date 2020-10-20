@@ -644,7 +644,9 @@ MonoBehaviour:
   xRange: 4.33
   yRange: 2.11
   positionPitchFactor: 5
+  positionYawFactor: -5
   controlPitchFactor: 15.09
+  controlRollFactor: -20
 --- !u!1 &1941369099
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,12 +799,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circuit: {fileID: 1984727725}
-  lookAheadForTargetOffset: 6.06
-  lookAheadForTargetFactor: 2.08
+  lookAheadForTargetOffset: 1
+  lookAheadForTargetFactor: 1
   lookAheadForSpeedOffset: 10.45
-  lookAheadForSpeedFactor: 2.48
-  progressStyle: 1
-  pointToPointThreshold: 4.79
+  lookAheadForSpeedFactor: 1
+  progressStyle: 0
+  pointToPointThreshold: 4
   target: {fileID: 963194228}
 --- !u!1 &2021734856
 GameObject:
