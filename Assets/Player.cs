@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(Mathf.Clamp(7f, 6f, 11f)); 
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         // vertical
         yThrow = CrossPlatformInputManager.GetAxis("Vertical");
         float yOffset = yThrow * xSpeed * Time.deltaTime;
-        float rawNewYPos = transform.localPosition.y + yOffset;
+        float rawNewYPos = transform.localPosition.y + yOffset; 
         float yPos = Mathf.Clamp(rawNewYPos, -yRange, yRange);
 
         // horizontal 
