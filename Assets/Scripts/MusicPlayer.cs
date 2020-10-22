@@ -16,22 +16,9 @@ public class MusicPlayer : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
         DontDestroyOnLoad(this.gameObject);
     }
-
-
-// Start is called before the first frame update
-void Start()
-    {
-        Invoke("LoadFirstLevel",3f);
-        
-    }
-
-
-    void LoadFirstLevel(){
-        SceneManager.LoadScene(1);
-    }
-
-
 }
+
+
+
