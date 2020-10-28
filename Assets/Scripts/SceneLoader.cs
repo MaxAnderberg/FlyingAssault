@@ -10,7 +10,7 @@ public class SceneLoader : MonoBehaviour
     {
         Invoke("LoadFirstLevel", 3f);
     }
-    void LoadFirstLevel()
+    public void LoadFirstLevel()
     {
         SceneManager.LoadScene(1);
     }
