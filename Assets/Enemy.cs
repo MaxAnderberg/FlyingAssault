@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         GameObject fx = Instantiate(deathVFX, transform.position, Quaternion.identity);
-        fx.transform.parent = parent
+        fx.transform.parent = parent;
         Destroy(gameObject);
     }
 }
