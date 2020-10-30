@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    [SerializeField] int scorePerHit = 12;
+    ScoreBoard scoreBoard;
     [SerializeField] Transform parent;
     [SerializeField] GameObject deathVFX;
     Collider collider;
@@ -12,6 +15,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         AddNonTriggerBoxCollider();
+        scoreBoard = FindObjectOfType<ScoreBoard>();
     }
 
     private void AddNonTriggerBoxCollider()
@@ -23,11 +27,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnParticleCollision(GameObject other)
     {
+        scoreBoard.ScoreHit(scorePerHit);
         GameObject fx = Instantiate(deathVFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
         Destroy(gameObject);

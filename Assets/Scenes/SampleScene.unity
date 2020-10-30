@@ -412,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 3745768003554662674, guid: f541c7a84edbaf04ab8ee6966b4e3e37,
         type: 3}
       propertyPath: m_Name
-      value: Bullets (1)
+      value: Gun Right
       objectReference: {fileID: 0}
     - target: {fileID: 3745768003554662675, guid: f541c7a84edbaf04ab8ee6966b4e3e37,
         type: 3}
@@ -764,6 +764,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1743424374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3745768003554662674, guid: f541c7a84edbaf04ab8ee6966b4e3e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 946621846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1802882212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,6 +870,9 @@ MonoBehaviour:
   controlPitchFactor: 15.09
   positionYawFactor: -5
   controlRollFactor: -20
+  guns:
+  - {fileID: 1828368424}
+  - {fileID: 1743424374}
 --- !u!54 &1802882216
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -907,6 +916,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 4579139327189685313}
   levelLoadDelay: 1
+--- !u!1 &1828368424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3745768003554662674, guid: f541c7a84edbaf04ab8ee6966b4e3e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 3745768003178301988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1847156517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1332,7 +1347,7 @@ PrefabInstance:
     - target: {fileID: 3745768003554662674, guid: f541c7a84edbaf04ab8ee6966b4e3e37,
         type: 3}
       propertyPath: m_Name
-      value: Bullets
+      value: Gun Left
       objectReference: {fileID: 0}
     - target: {fileID: 3745768003554662675, guid: f541c7a84edbaf04ab8ee6966b4e3e37,
         type: 3}
